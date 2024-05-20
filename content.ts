@@ -23,7 +23,7 @@ function addTrackingButton(issueKey: string) {
   // Create a new button with the svg icon inside
   const ankerLink = document.createElement('a');
   ankerLink.className = 'jira-time-tracker-button';
-  ankerLink.href = `de.adrianfahrbach.jiratimetracker://new-worklog/${issueKey}`;
+  ankerLink.href = `de.adrianfahrbach.jiratimetracker://create-worklog?issueKey=${issueKey}`;
   ankerLink.ariaLabel = 'Start tracking time';
   ankerLink.title = 'Start tracking time';
   ankerLink.innerHTML =
