@@ -15,7 +15,8 @@ function addTrackingButton(issueKey: string) {
   const issueMeatballMenuButton = document.querySelector(
     '[data-testid="issue-meatball-menu.ui.dropdown-trigger.button"]'
   );
-  if (!issueMeatballMenuButton) {
+  const trackingButton = document.querySelector('.jira-time-tracker-button');
+  if (!issueMeatballMenuButton || trackingButton) {
     return false;
   }
   const buttonsContainer = issueMeatballMenuButton.parentNode.parentNode.parentNode.parentNode.parentNode;
