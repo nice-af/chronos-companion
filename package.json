@@ -1,0 +1,43 @@
+{
+  "name": "jira-time-tracker-companion",
+  "displayName": "Jira Time Tracker Companion",
+  "version": "0.0.1",
+  "description": "A companion extension for the Jira Time Tracker app.",
+  "contributors": [
+    {
+      "name": "Adrian Fahrbach",
+      "email": "adrianfahrbach@me.com",
+      "url": "https://adrianfahrbach.com/"
+    },
+    {
+      "name": "Florian Merz",
+      "email": "florian.merz@mail.de"
+    }
+  ],
+  "scripts": {
+    "dev": "plasmo dev",
+    "build": "plasmo build",
+    "package": "plasmo package"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "plasmo": "0.86.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "4.1.1",
+    "@types/chrome": "0.0.258",
+    "@types/lodash": "^4.17.4",
+    "@types/node": "20.11.5",
+    "@types/react": "18.2.48",
+    "@types/react-dom": "18.2.18",
+    "prettier": "3.2.4",
+    "typescript": "5.3.3"
+  },
+  "manifest": {
+    "host_permissions": [
+      "https://*/*"
+    ]
+  }
+}

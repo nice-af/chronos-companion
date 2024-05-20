@@ -1,0 +1,21 @@
+## Please check .gitignore when changing this file
+
+## File extensions
+*.*
+!*.scss
+!*.css
+!*.js
+!*.mjs
+!*.jsx
+!*.json
+!*.yml
+!*.eslintrc
+!*.ts
+!*.tsx
+!*.mdx
+
+## Paths
+/.gitsecret
+/dist
+/node_module
+package-lock.json
