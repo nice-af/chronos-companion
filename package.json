@@ -39,7 +39,10 @@
   },
   "manifest": {
     "host_permissions": [
-      "https://*/*"
+      "https://*.atlassian.net/*"
+    ],
+    "permissions": [
+      "https://*.atlassian.net/*"
     ]
   }
 }
