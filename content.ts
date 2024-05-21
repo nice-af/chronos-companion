@@ -82,7 +82,6 @@ async function tryAddingTheButtonMultipleTimes() {
   if (isTryingToAddTheButton) {
     return;
   }
-  isTryingToAddTheButton = true;
   let issueKey: string | undefined;
   const isIssueDetailPage = location.href.includes('atlassian.net/browse');
   const isPopupPage = location.href.includes('atlassian.net/jira/software/projects');
@@ -104,6 +103,7 @@ async function tryAddingTheButtonMultipleTimes() {
     }
   }
 
+  isTryingToAddTheButton = true;
   for (let i = 0; i < 10; i++) {
     if (addTrackingButton(issueKey)) {
       break;
