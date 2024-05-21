@@ -17,7 +17,8 @@
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
-    "package": "plasmo package"
+    "package": "plasmo package",
+    "release": "release-it"
   },
   "dependencies": {
     "lodash": "^4.17.21",
@@ -33,6 +34,7 @@
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
     "prettier": "3.2.4",
+    "release-it": "^17.3.0",
     "typescript": "5.3.3"
   },
   "manifest": {

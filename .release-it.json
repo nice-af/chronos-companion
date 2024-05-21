@@ -1,0 +1,12 @@
+{
+  "git": {
+    "commit": true,
+    "commitMessage": "🏷 release: v${version}"
+  },
+  "github": {
+    "release": true
+  },
+  "npm": {
+    "publish": false
+  }
+}
