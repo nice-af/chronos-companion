@@ -1,7 +1,7 @@
 {
   "name": "jira-time-tracker-companion",
   "displayName": "Jira Time Tracker Companion",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A companion extension for the Jira Time Tracker app.",
   "contributors": [
     {
