@@ -11,7 +11,7 @@ export const config: PlasmoCSConfig = {
  * @param issueKey The issue that the button should start tracking time for
  * @returns True if the button was added successfully, false otherwise
  */
-function addTrackingButton(issueKey: string) {
+function addTrackingButton(issueKey: string, accountId: string) {
   const issueMeatballMenuButton = document.querySelector(
     '[data-testid="issue-meatball-menu.ui.dropdown-trigger.button"]'
   );
@@ -24,7 +24,7 @@ function addTrackingButton(issueKey: string) {
   // Create a new button with the svg icon inside
   const ankerLink = document.createElement('a');
   ankerLink.className = 'jira-time-tracker-button';
-  ankerLink.href = `de.adrianfahrbach.jiratimetracker://create-worklog?issueKey=${issueKey}`;
+  ankerLink.href = `de.adrianfahrbach.jiratimetracker://create-worklog?issueKey=${issueKey}&accountId=${accountId}`;
   ankerLink.ariaLabel = 'Start tracking time';
   ankerLink.title = 'Start tracking time';
   ankerLink.innerHTML =
@@ -102,10 +102,11 @@ async function tryAddingTheButtonMultipleTimes() {
       issueKey = foundIssueKey;
     }
   }
+  const accountId = (document.querySelector('meta[name="ajs-atlassian-account-id"]') as HTMLMetaElement).content;
 
   isTryingToAddTheButton = true;
   for (let i = 0; i < 10; i++) {
-    if (addTrackingButton(issueKey)) {
+    if (addTrackingButton(issueKey, accountId)) {
       break;
     }
     await delay(1000);
