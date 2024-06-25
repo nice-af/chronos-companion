@@ -1,8 +1,8 @@
 {
-  "name": "jira-time-tracker-companion",
-  "displayName": "Jira Time Tracker Companion",
+  "name": "chronos-companion",
+  "displayName": "Chronos Companion",
   "version": "0.0.4",
-  "description": "A companion extension for the Jira Time Tracker app.",
+  "description": "A companion extension for the Chronos app.",
   "contributors": [
     {
       "name": "Adrian Fahrbach",

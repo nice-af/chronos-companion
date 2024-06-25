@@ -15,7 +15,7 @@ function addTrackingButton(issueKey: string, accountId: string, cloudId: string)
   const issueMeatballMenuButton = document.querySelector(
     '[data-testid="issue-meatball-menu.ui.dropdown-trigger.button"]'
   );
-  const trackingButton = document.querySelector('.jira-time-tracker-button');
+  const trackingButton = document.querySelector('.chronos-button');
   if (!issueMeatballMenuButton || trackingButton) {
     return false;
   }
@@ -23,8 +23,8 @@ function addTrackingButton(issueKey: string, accountId: string, cloudId: string)
 
   // Create a new button with the svg icon inside
   const ankerLink = document.createElement('a');
-  ankerLink.className = 'jira-time-tracker-button';
-  ankerLink.href = `de.adrianfahrbach.jiratimetracker://create-worklog?issueKey=${issueKey}&accountId=${accountId}&cloudId=${cloudId}`;
+  ankerLink.className = 'chronos-button';
+  ankerLink.href = `de.nice-af.chronos://auth://create-worklog?issueKey=${issueKey}&accountId=${accountId}&cloudId=${cloudId}`;
   ankerLink.ariaLabel = 'Start tracking time';
   ankerLink.title = 'Start tracking time';
   ankerLink.innerHTML =
@@ -32,7 +32,7 @@ function addTrackingButton(issueKey: string, accountId: string, cloudId: string)
 
   const style = `
 <style>
-    .jira-time-tracker-button {
+    .chronos-button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -48,19 +48,19 @@ function addTrackingButton(issueKey: string, accountId: string, cloudId: string)
         transition: background 0.1s ease-out 0s, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
     }
 
-    .jira-time-tracker-button:hover {
+    .chronos-button:hover {
         background: var(--ds-background-neutral-subtle-hovered, rgba(9, 30, 66, 0.08));
         transition-duration: 0s, 0.15s;
     }
 
-    .jira-time-tracker-button:active {
+    .chronos-button:active {
         outline: none;
         background: var(--ds-background-neutral-subtle-pressed, rgba(179, 212, 255, 0.6));
         transition-duration: 0s, 0s;
         color: var(--ds-text, #0052CC) !important;
     }
 
-    .jira-time-tracker-button svg {
+    .chronos-button svg {
         flex-shrink: 0;
     }
 </style>`;
