@@ -1,7 +1,7 @@
 {
   "name": "chronos-companion",
   "displayName": "Chronos Companion",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "A companion extension for the Chronos app.",
   "contributors": [
     {
