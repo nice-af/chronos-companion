@@ -7,11 +7,12 @@
     {
       "name": "Adrian Fahrbach",
       "email": "adrianfahrbach@me.com",
-      "url": "https://adrianfahrbach.com/"
+      "url": "https://adrianfahrbach.com"
     },
     {
       "name": "Florian Merz",
-      "email": "florian.merz@mail.de"
+      "email": "florian.merz@mail.de",
+      "url": "https://florianmrz.com"
     }
   ],
   "scripts": {
