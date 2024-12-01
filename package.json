@@ -1,7 +1,7 @@
 {
   "name": "chronos-companion",
   "displayName": "Chronos for Jira Companion",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A companion extension for the Chronos app.",
   "contributors": [
     {
