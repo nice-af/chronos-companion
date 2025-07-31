@@ -27,3 +27,9 @@ Before publishing, you need to release a new version of the extension by running
 ```bash
 npm run release
 ```
+
+### Publishing the Safari extension
+
+The Safari extension is tied to the MacOS app. To publish the Safari extensiion you therefore need to create a new release of the MacOS app.
+
+To update the extension files, switch to the `chronos-app` repo and follow the instructions in the README there.
