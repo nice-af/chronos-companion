@@ -17,8 +17,8 @@
   ],
   "scripts": {
     "dev": "plasmo dev",
-    "build": "plasmo build",
-    "package": "plasmo package",
+    "build": "plasmo build --target=chrome-mv3 && plasmo build --target=firefox-mv3 && plasmo build --target=edge-mv3",
+    "package": "plasmo package --target=chrome-mv3 && plasmo package --target=firefox-mv3 && plasmo package --target=edge-mv3",
     "release": "release-it",
     "refresh-token:google": "npx gcp-refresh-token"
   },

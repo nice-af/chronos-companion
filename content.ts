@@ -31,8 +31,8 @@ function addTrackingButton(issueKey: string, accountId: string, cloudId: string)
   ankerLink.innerHTML =
     '<svg width="18" height="18" viewbox="0 0 22 22" fill="currentColor"><path d="M21.848 10.633a.52.52 0 0 1 0 .735l-9.17 9.191a.52.52 0 0 1-.889-.367v-3.905a.13.13 0 0 1 .038-.092l5.091-5.102a.13.13 0 0 0 0-.184l-5.09-5.102a.13.13 0 0 1-.039-.092V1.81a.52.52 0 0 1 .889-.368l9.17 9.191zm-16.766.46a.13.13 0 0 1 0-.184l5.114-5.126a.13.13 0 0 0 .038-.092V1.786a.52.52 0 0 0-.888-.367L.152 10.633a.52.52 0 0 0 0 .735l9.194 9.215a.52.52 0 0 0 .888-.368V16.31a.13.13 0 0 0-.038-.091l-5.114-5.126z" /><path d="M14.951 10.909a.13.13 0 0 1 0 .184l-2.895 2.902a.156.156 0 0 1-.267-.11V8.116c0-.139.168-.208.267-.11l2.895 2.902z" /></svg>';
 
-  const style = `
-<style>
+  const style = document.createElement('style');
+  style.textContent = `
   .chronos-button {
     display: flex !important;
     align-items: center !important;
@@ -57,10 +57,10 @@ function addTrackingButton(issueKey: string, accountId: string, cloudId: string)
     display: block;
     flex-shrink: 0;
   }
-</style>`;
+`;
 
   buttonsContainer.prepend(ankerLink);
-  document.head.insertAdjacentHTML('beforeend', style);
+  document.head.appendChild(style);
   return true;
 }
 
