@@ -31,3 +31,9 @@ dist/
 
 # typescript
 .tsbuildinfo
+.gitsecret/keys/random_seed
+!*.secret
+keys.json
+google-keys.json
+key.json
+extension-stores.md

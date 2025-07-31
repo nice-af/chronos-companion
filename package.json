@@ -19,11 +19,12 @@
     "dev": "plasmo dev",
     "build": "plasmo build",
     "package": "plasmo package",
-    "release": "release-it"
+    "release": "release-it",
+    "refresh-token:google": "npx gcp-refresh-token"
   },
   "dependencies": {
     "lodash": "^4.17.21",
-    "plasmo": "^0.89.4",
+    "plasmo": "^0.90.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
