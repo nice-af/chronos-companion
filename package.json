@@ -47,9 +47,6 @@
   "manifest": {
     "host_permissions": [
       "https://*.atlassian.net/*"
-    ],
-    "permissions": [
-      "https://*.atlassian.net/*"
     ]
   }
 }

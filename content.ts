@@ -15,11 +15,12 @@ function addTrackingButton(issueKey: string, accountId: string, cloudId: string)
   const issueMeatballMenuButton = document.querySelector(
     '[data-testid="issue-meatball-menu.ui.dropdown-trigger.button"]'
   );
+  const groupDiv = issueMeatballMenuButton?.closest('[role="group"]');
   const trackingButton = document.querySelector('.chronos-button');
-  if (!issueMeatballMenuButton || trackingButton) {
+  if (!issueMeatballMenuButton || !groupDiv || trackingButton) {
     return false;
   }
-  const buttonsContainer = issueMeatballMenuButton.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
+  const buttonsContainer = groupDiv.childNodes[0] as HTMLDivElement;
 
   // Create a new button with the svg icon inside
   const ankerLink = document.createElement('a');
@@ -32,16 +33,30 @@ function addTrackingButton(issueKey: string, accountId: string, cloudId: string)
 
   const style = `
 <style>
-    .chronos-button {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
+  .chronos-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: var(--ds-text-subtle) !important;
+    cursor: pointer !important;
+  }
 
-    .chronos-button svg {
-        display: block;
-        flex-shrink: 0;
-    }
+  .chronos-button:hover {
+    background-color: var(--ds-background-neutral-subtle-hovered) !important;
+  }
+
+  .chronos-button:active {
+    background-color: var(--ds-background-neutral-subtle-pressed) !important;
+  }
+
+  .chronos-button::after {
+    border-color: var(--ds-border) !important;
+  }
+
+  .chronos-button svg {
+    display: block;
+    flex-shrink: 0;
+  }
 </style>`;
 
   buttonsContainer.prepend(ankerLink);
