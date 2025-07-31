@@ -19,48 +19,27 @@ function addTrackingButton(issueKey: string, accountId: string, cloudId: string)
   if (!issueMeatballMenuButton || trackingButton) {
     return false;
   }
-  const buttonsContainer = issueMeatballMenuButton.parentNode.parentNode.parentNode.parentNode.parentNode;
+  const buttonsContainer = issueMeatballMenuButton.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
 
   // Create a new button with the svg icon inside
   const ankerLink = document.createElement('a');
-  ankerLink.className = 'chronos-button';
+  ankerLink.className = 'chronos-button ' + issueMeatballMenuButton.className;
   ankerLink.href = `de.adrianfahrbach.chronos://auth://create-worklog?issueKey=${issueKey}&accountId=${accountId}&cloudId=${cloudId}`;
   ankerLink.ariaLabel = 'Start tracking time';
   ankerLink.title = 'Start tracking time';
   ankerLink.innerHTML =
-    '<svg width="22" height="22" fill="currentColor"><path d="M21.848 10.633a.52.52 0 0 1 0 .735l-9.17 9.191a.52.52 0 0 1-.889-.367v-3.905a.13.13 0 0 1 .038-.092l5.091-5.102a.13.13 0 0 0 0-.184l-5.09-5.102a.13.13 0 0 1-.039-.092V1.81a.52.52 0 0 1 .889-.368l9.17 9.191zm-16.766.46a.13.13 0 0 1 0-.184l5.114-5.126a.13.13 0 0 0 .038-.092V1.786a.52.52 0 0 0-.888-.367L.152 10.633a.52.52 0 0 0 0 .735l9.194 9.215a.52.52 0 0 0 .888-.368V16.31a.13.13 0 0 0-.038-.091l-5.114-5.126z" /><path d="M14.951 10.909a.13.13 0 0 1 0 .184l-2.895 2.902a.156.156 0 0 1-.267-.11V8.116c0-.139.168-.208.267-.11l2.895 2.902z" /></svg>';
+    '<svg width="18" height="18" viewbox="0 0 22 22" fill="currentColor"><path d="M21.848 10.633a.52.52 0 0 1 0 .735l-9.17 9.191a.52.52 0 0 1-.889-.367v-3.905a.13.13 0 0 1 .038-.092l5.091-5.102a.13.13 0 0 0 0-.184l-5.09-5.102a.13.13 0 0 1-.039-.092V1.81a.52.52 0 0 1 .889-.368l9.17 9.191zm-16.766.46a.13.13 0 0 1 0-.184l5.114-5.126a.13.13 0 0 0 .038-.092V1.786a.52.52 0 0 0-.888-.367L.152 10.633a.52.52 0 0 0 0 .735l9.194 9.215a.52.52 0 0 0 .888-.368V16.31a.13.13 0 0 0-.038-.091l-5.114-5.126z" /><path d="M14.951 10.909a.13.13 0 0 1 0 .184l-2.895 2.902a.156.156 0 0 1-.267-.11V8.116c0-.139.168-.208.267-.11l2.895 2.902z" /></svg>';
 
   const style = `
 <style>
     .chronos-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 2.28571em;
-        height: 2.28571em;
-        font-size: inherit;
-        color: var(--ds-text, #42526e) !important;
-        cursor: pointer;
-        background: var(--ds-background-neutral-subtle, none);
-        border: none;
-        border-radius: var(--ds-border-radius, 3px);
-        appearance: none;
-        transition: background 0.1s ease-out 0s, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
-    }
-
-    .chronos-button:hover {
-        background: var(--ds-background-neutral-subtle-hovered, rgba(9, 30, 66, 0.08));
-        transition-duration: 0s, 0.15s;
-    }
-
-    .chronos-button:active {
-        outline: none;
-        background: var(--ds-background-neutral-subtle-pressed, rgba(179, 212, 255, 0.6));
-        transition-duration: 0s, 0s;
-        color: var(--ds-text, #0052CC) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 
     .chronos-button svg {
+        display: block;
         flex-shrink: 0;
     }
 </style>`;
