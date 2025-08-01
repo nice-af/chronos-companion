@@ -69,13 +69,9 @@ async function delay(ms: number) {
 }
 
 /**
- * Try to add the button multiple times in case the issue is not loaded yet
+ * Tries to get the current issue key and returns it if it is found
  */
-let isTryingToAddTheButton = false;
-async function tryAddingTheButtonMultipleTimes() {
-  if (isTryingToAddTheButton) {
-    return;
-  }
+function getIssueKey() {
   let issueKey: string | undefined;
   const isIssueDetailPage = location.href.includes('atlassian.net/browse');
   const isPopupPage = location.href.includes('atlassian.net/jira/software/projects');
@@ -96,12 +92,30 @@ async function tryAddingTheButtonMultipleTimes() {
       issueKey = foundIssueKey;
     }
   }
+  return issueKey;
+}
+
+/**
+ * Try to add the button multiple times in case the issue is not loaded yet
+ */
+let isTryingToAddTheButton = false;
+async function tryAddingTheButtonMultipleTimes() {
+  if (isTryingToAddTheButton) {
+    return;
+  }
+
   const accountId = (document.querySelector('meta[name="ajs-atlassian-account-id"]') as HTMLMetaElement).content;
   const cloudId = (document.querySelector('meta[name="ajs-cloud-id"]') as HTMLMetaElement).content;
 
+  if (!accountId || !cloudId) {
+    // Something went wrong, since we are missing some information
+    return;
+  }
+
   isTryingToAddTheButton = true;
   for (let i = 0; i < 10; i++) {
-    if (addTrackingButton(issueKey, accountId, cloudId)) {
+    const issueKey = getIssueKey();
+    if (issueKey && addTrackingButton(issueKey, accountId, cloudId)) {
       break;
     }
     await delay(1000);
