@@ -25,7 +25,7 @@ function addTrackingButton(issueKey: string, accountId: string, cloudId: string)
   // Create a new button with the svg icon inside
   const ankerLink = document.createElement('a');
   ankerLink.className = 'chronos-button ' + issueMeatballMenuButton.className;
-  ankerLink.href = `de.adrianfahrbach.chronos://auth://create-worklog?issueKey=${issueKey}&accountId=${accountId}&cloudId=${cloudId}`;
+  ankerLink.href = `de.adrianfahrbach.chronos://create-worklog?issueKey=${issueKey}&accountId=${accountId}&cloudId=${cloudId}`;
   ankerLink.ariaLabel = 'Start tracking time';
   ankerLink.title = 'Start tracking time';
   ankerLink.innerHTML =
